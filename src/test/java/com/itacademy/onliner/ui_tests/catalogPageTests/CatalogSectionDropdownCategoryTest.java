@@ -13,8 +13,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -25,8 +23,6 @@ import static java.lang.String.format;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CatalogSectionDropdownCategoryTest {
-
-    protected static final Logger LOG = LoggerFactory.getLogger(CatalogSectionDropdownCategoryTest.class);
 
     public CatalogPage catalogPage = new CatalogPage();
 
@@ -77,7 +73,6 @@ public class CatalogSectionDropdownCategoryTest {
     @AfterAll
     public static void closeBrowser() {
         new HomePage().closeBrowser();
-        LOG.info("Browser is closed");
     }
 
 }

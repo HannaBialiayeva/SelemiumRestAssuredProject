@@ -19,8 +19,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class CatalogSectionsMenuTest {
 
     public HomePage homePage = new HomePage();
-
-
+    
     @BeforeAll
     public static void navigateToHomePage() {
         navigateToOnlinerHomePage();

@@ -11,8 +11,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static com.itacademy.onliner.navigation.OnlinerNavigation.navigateToOnlinerHomePage;
 import static com.itacademy.onliner.page_object.CatalogPage.CLASSIFIER_DROPDOWN_SECTIONS;
@@ -22,7 +20,6 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class CatalogSectionDropdownTest {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(CatalogSectionDropdownTest.class);
     public CatalogPage catalogPage = new CatalogPage();
 
     @BeforeAll
