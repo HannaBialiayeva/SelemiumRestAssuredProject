@@ -1,6 +1,9 @@
 package com.itacademy.onliner.ui_tests.catalogPageTests;
 
 import com.itacademy.onliner.page_object.HomePage;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -17,19 +20,21 @@ public class CatalogSectionsMenuTest {
 
     public HomePage homePage = new HomePage();
 
+
     @BeforeAll
     public static void navigateToHomePage() {
         navigateToOnlinerHomePage();
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"Электроника", "Компьютеры", "Бытовая техника", "Стройка и ремонт",
-            "Дом и сад", "Авто и мото", "Красота и спорт", "Детям и мамам", "Работа и офис", "Еда"})
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("Catalog Menu contains required sections")
+    @ValueSource(strings = {"Электроника", "Компьютеры", "Бытовая техника", "Стройка",
+            "Дом", "Авто", "Красота", "Детям", "Работа"})
     void testCatalogMenuContainsSectionHeaders(String classifierName) {
         homePage.clickOnCatalogueLink();
         WebElement sectionsMenu = homePage.findElement(By.xpath(format(CLASSIFIER_LINK_PATTERN, classifierName)));
         assertThat(sectionsMenu.getText().contains(classifierName));
-
     }
 
     @AfterAll
